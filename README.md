@@ -101,62 +101,62 @@
 ## 基础库更新 (1.5.1)
 * `F` 修复 组件 `<image />` 覆盖兄弟节点或图片圆角不显示问题
 ## 基础库更新 (1.5.0)
-`A` 新增 API `checkIsSupportSoterAuthentication` `startSoterAuthentication` 生物认证接口 
-`A` 新增 API `startPullDownRefresh` 主动触发下拉刷新接口 
-`A` 新增 API `chooseInvoiceTitle` 选择发票抬头接口 
-`A` 新增 框架 触摸类事件增加 `capture` 阶段 
-`A` 新增 框架 长按事件 `longpress` 
-`A` 新增 框架 `page.json` 支持设置 `onReachBottom` 距离 
-`U` 更新 API `getSystemInfo` 增加 `fontSizeSetting` 支持读取用户字体大小设置 
-`U` 更新 API `getSystemInfo` 增加 brand 支持读取手机品牌字段 
-`F` 修复 API `getSystemInfo` 在华为或者魅族带虚拟按键的设备上获取 windowWidth 和 windowHeight 为 0 问题
-`U` 更新 API `writeBLECharacteristicValue` 根据写入属性特征值决定回调时机
-`U` 更新 API `shareAppMessage` 增加 imageUrl 参数支持分享自定义配图 
-`U` 更新 API `getBluetoothDevices onBluetoothDeviceFound` 设备信息增加 localName 字段 
-`F` 修复 API `switchTab` 在页面注册前调用会报错的问题
-`F` 修复 API `selectorQuery movable-view` 等组件无法在 selectorQuery 中被 class 选择器选中问题
-`F` 修复 API `setNavigationBarColor` 在 iOS 下被 app.json 里 navigationBarTextStyle 覆盖设置问题
-`F` 修复 API `getSetting openSetting `在 iOS 下部分生命周期函数中调用失效
-`F` 修复 API `canvasToTempFilePath `在 iOS 下导出的图片为白色背景的问题
-`F` 修复 API `captureScreen` 在 Android 下生成的文件扩展名为 unknown 问题
-`F` 修复 API `getBeacons` 在 Android 下未获取到设备时 beacons 字段缺失问题
-`F` 修复 API `chooseLocation` 在 Android 下回调函数 latitude、longitude 类型为 string 问题，应为 number
-`F` 修复 API `connectSocket` 在 Android 下接口的请求包 header 中没有 origin 问题
-`F` 修复 API `previewImage` 在 iOS 下导航栏没有显示当前图片索引位置(1/n)的问题
-`F` 修复 API `previewImage` 在 iOS 下横屏后退出，tabBar 漂移到页面中间问题
-`F` 修复 API `chooseImage `在 Android 下未处理图片旋转的情况
-`F` 修复 API `showToast` `showLoading` 在 iOS 下异步 hide 后重新调用 show，show 不生效问题
-`F` 修复 API `pageScrollTo `导致 video 组件错位问题
-`U` 更新 组件 `<picker />` 增加 custom-item，region 模式支持自定义项 
-`F` 修复 组件 `<picker />` 在 iOS 下 mode=year 时点击会 crash 问题
-`U` 更新 组件 `<picker-view />` 增加 mask-style、mask-class 支持自定义半透明蒙层的颜色 
-`F` 修复 组件 `<picker />` region 模式在 form submit 的 detail 没有应该返回省市区问题
-`U` 更新 组件 `<textarea />` `<input />` 增加 cursor 支持主动设置和读取光标位置 
-`F` 修复 组件 `<textarea />` 在 iOS 下编辑时切换键盘，光标会跳到最后的问题
-`F` 修复 组件 `<textarea />` 在 Android 下页面 onLoad 中设置 value 无效问题
-`F` 修复 组件 `<textarea />` 在 Android 下设置 cursor-spacing 无效问题
-`F` 修复 组件 `<form />` 在 textarea input 同时使用时，先点击 textarea，再点击 input 后，无法提交表单的问题
-`F` 修复 组件 `<input />` 在 Android 下 bindinput 事件回调函数缺少 detail.cursor 参数问题
-`F` 修复 组件 `<input /> `在 Android 下与 auto-height 的 textarea 同时使用，不会弹出数字键盘问题
-`F` 修复 组件 `<input />` bindfocus 中调用 chooseLocation 并 setData，导致所有 input 失效问题
-`U` 更新 组件 `<button />` 增加 show-message-card 等属性，支持客服会话分享卡片 
-`U` 更新 组件 `<image />` 支持图片懒加载
-`F` 修复 组件 `<image /> `传入本地文件路径在 iOS 上无法触发浏览器重绘的问题
-`F` 修复 组件 `<movable-view />`动态生成的 movable-view 定位不准确的问题 
-`F` 修复 组件 `<cover-view /> `通过 wx:if 控制不生效的问题
-`F` 修复 组件 `<map />` 在 iOS 下 bindcontroltap 事件同时会触发 bindtap 的问题
-`F` 修复 组件 `<canvas /> `在 iOS 下线条的渐变、宽度同时设置会丢掉线条宽度的问题
-`F` 修复 组件 `<cover-view />` 在 Android 下 border-radius 无效问题
-`F` 修复 组件 `<rich-text />` 自动 trim 问题
-`F` 修复 组件 `<video /> `在 Android 下，未开始播放时，组件上无法触发页面滑动问题
-`F` 修复 组件 `<cover-view />` 点击时会穿透到 map，触发 map 的 tap 事件问题
-`F` 修复 video 上下文 seek 秒数会被取整，无法精确定位问题
-`F` 修复 框架 `onReachBottom handler` 不存在的 warning 在某些情况下异常出现的问题
-`U` 更新 框架 `setData` 支持异步回调 
-`U` 更新 框架 `hover-stop-propagation` 支持拦截点击态 
-`U` 更新 框架 后台拉起小程序时` reLaunch` 优化
-`U` 更新 框架 页面跳转和弹窗授权类接口支持在 `App onLaunch` 时机调用
-`F` 修复 框架 在部分 Android 下出现页面放大的问题
+* `A` 新增 API `checkIsSupportSoterAuthentication` `startSoterAuthentication` 生物认证接口 
+* `A` 新增 API `startPullDownRefresh` 主动触发下拉刷新接口 
+* `A` 新增 API `chooseInvoiceTitle` 选择发票抬头接口 
+* `A` 新增 框架 触摸类事件增加 `capture` 阶段 
+* `A` 新增 框架 长按事件 `longpress` 
+* `A` 新增 框架 `page.json` 支持设置 `onReachBottom` 距离 
+* `U` 更新 API `getSystemInfo` 增加 `fontSizeSetting` 支持读取用户字体大小设置 
+* `U` 更新 API `getSystemInfo` 增加 brand 支持读取手机品牌字段 
+* `F` 修复 API `getSystemInfo` 在华为或者魅族带虚拟按键的设备上获取 windowWidth 和 windowHeight 为 0 问题
+* `U` 更新 API `writeBLECharacteristicValue` 根据写入属性特征值决定回调时机
+* `U` 更新 API `shareAppMessage` 增加 imageUrl 参数支持分享自定义配图 
+* `U` 更新 API `getBluetoothDevices onBluetoothDeviceFound` 设备信息增加 localName 字段 
+* `F` 修复 API `switchTab` 在页面注册前调用会报错的问题
+* `F` 修复 API `selectorQuery movable-view` 等组件无法在 selectorQuery 中被 class 选择器选中问题
+* `F` 修复 API `setNavigationBarColor` 在 iOS 下被 app.json 里 navigationBarTextStyle 覆盖设置问题
+* `F` 修复 API `getSetting openSetting `在 iOS 下部分生命周期函数中调用失效
+* `F` 修复 API `canvasToTempFilePath `在 iOS 下导出的图片为白色背景的问题
+* `F` 修复 API `captureScreen` 在 Android 下生成的文件扩展名为 unknown 问题
+* `F` 修复 API `getBeacons` 在 Android 下未获取到设备时 beacons 字段缺失问题
+* `F` 修复 API `chooseLocation` 在 Android 下回调函数 latitude、longitude 类型为 string 问题，应为 number
+* `F` 修复 API `connectSocket` 在 Android 下接口的请求包 header 中没有 origin 问题
+* `F` 修复 API `previewImage` 在 iOS 下导航栏没有显示当前图片索引位置(1/n)的问题
+* `F` 修复 API `previewImage` 在 iOS 下横屏后退出，tabBar 漂移到页面中间问题
+* `F` 修复 API `chooseImage `在 Android 下未处理图片旋转的情况
+* `F` 修复 API `showToast` `showLoading` 在 iOS 下异步 hide 后重新调用 show，show 不生效问题
+* `F` 修复 API `pageScrollTo `导致 video 组件错位问题
+* `U` 更新 组件 `<picker />` 增加 custom-item，region 模式支持自定义项 
+* `F` 修复 组件 `<picker />` 在 iOS 下 mode=year 时点击会 crash 问题
+* `U` 更新 组件 `<picker-view />` 增加 mask-style、mask-class 支持自定义半透明蒙层的颜色 
+* `F` 修复 组件 `<picker />` region 模式在 form submit 的 detail 没有应该返回省市区问题
+* `U` 更新 组件 `<textarea />` `<input />` 增加 cursor 支持主动设置和读取光标位置 
+* `F` 修复 组件 `<textarea />` 在 iOS 下编辑时切换键盘，光标会跳到最后的问题
+* `F` 修复 组件 `<textarea />` 在 Android 下页面 onLoad 中设置 value 无效问题
+* `F` 修复 组件 `<textarea />` 在 Android 下设置 cursor-spacing 无效问题
+* `F` 修复 组件 `<form />` 在 textarea input 同时使用时，先点击 textarea，再点击 input 后，无法提交表单的问题
+* `F` 修复 组件 `<input />` 在 Android 下 bindinput 事件回调函数缺少 detail.cursor 参数问题
+* `F` 修复 组件 `<input /> `在 Android 下与 auto-height 的 textarea 同时使用，不会弹出数字键盘问题
+* `F` 修复 组件 `<input />` bindfocus 中调用 chooseLocation 并 setData，导致所有 input 失效问题
+* `U` 更新 组件 `<button />` 增加 show-message-card 等属性，支持客服会话分享卡片 
+* `U` 更新 组件 `<image />` 支持图片懒加载
+* `F` 修复 组件 `<image /> `传入本地文件路径在 iOS 上无法触发浏览器重绘的问题
+* `F` 修复 组件 `<movable-view />`动态生成的 movable-view 定位不准确的问题 
+* `F` 修复 组件 `<cover-view /> `通过 wx:if 控制不生效的问题
+* `F` 修复 组件 `<map />` 在 iOS 下 bindcontroltap 事件同时会触发 bindtap 的问题
+* `F` 修复 组件 `<canvas /> `在 iOS 下线条的渐变、宽度同时设置会丢掉线条宽度的问题
+* `F` 修复 组件 `<cover-view />` 在 Android 下 border-radius 无效问题
+* `F` 修复 组件 `<rich-text />` 自动 trim 问题
+* `F` 修复 组件 `<video /> `在 Android 下，未开始播放时，组件上无法触发页面滑动问题
+* `F` 修复 组件 `<cover-view />` 点击时会穿透到 map，触发 map 的 tap 事件问题
+* `F` 修复 video 上下文 seek 秒数会被取整，无法精确定位问题
+* `F` 修复 框架 `onReachBottom handler` 不存在的 warning 在某些情况下异常出现的问题
+* `U` 更新 框架 `setData` 支持异步回调 
+* `U` 更新 框架 `hover-stop-propagation` 支持拦截点击态 
+* `U` 更新 框架 后台拉起小程序时` reLaunch` 优化
+* `U` 更新 框架 页面跳转和弹窗授权类接口支持在 `App onLaunch` 时机调用
+* `F` 修复 框架 在部分 Android 下出现页面放大的问题
 
 ## 其他版本更新参考官方说明
 [官方历史更新记录](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/uplog.html)
