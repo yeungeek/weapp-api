@@ -1,3 +1,7 @@
+[![NPM version](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/weapp-api) 
+[![NPM version](https://img.shields.io/node/v/passport.svg)](https://www.npmjs.com/package/weapp-api) 
+
+
 # 安装
 ```$ npm install weapp-api ```
 # 更新日志
