@@ -113,5 +113,64 @@ class wx {
      * @returns SocketTask
      * @see https://mp.weixin.qq.com/debug/wxadoc/dev/api/network-socket.html#wxonsocketclosecallback
      */
-    static onSocketClose(CALLBACK){}
+    static onSocketClose(CALLBACK) { }
+
+    /**
+     * 从本地相册选择图片或使用相机拍照
+     * 注：文件的临时路径，在小程序本次启动期间可以正常使用，如需持久保存，需在主动调用 wx.saveFile，在小程序下次启动时才能访问得到
+     * @param {Number} count                (选填)最多可以选择的图片张数，默认9
+     * @param {StringArray} sizeType        (选填)original 原图，compressed 压缩图，默认二者都有
+     * @param {StringArray} sourceType      (选填)album 从相册选图，camera 使用相机，默认二者都有
+     * @param {*} success                   (必填)接口调用成功的回调函数                
+     * @param {*} fail                      (选填)接口调用失败的回调函数    
+     * @param {*} complete                  (选填)接口调用结束的回调函数（调用成功、失败都会执行）   
+     * @see https://mp.weixin.qq.com/debug/wxadoc/dev/api/media-picture.html#wxchooseimageobject
+     * @example
+     * <pre><code>
+     * wx.chooseImage({
+     *   count: 1, // 默认9
+     *   sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+     *   sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+     *   success: function (res) {
+     *     // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+     *     var tempFilePaths = res.tempFilePaths
+     *   }
+     * })
+     * </code></pre>
+     */
+    static chooseImage(count, sizeType, sourceType, success, fail, complete) { }
+
+    /**
+     * 预览图片
+     * @param {String} current      (选填)当前显示图片的链接，不填则默认为 urls 的第一张
+     * @param {StringArray} urls    (必填)需要预览的图片链接列表
+     * @param {*} success           (选填)接口调用成功的回调函数                
+     * @param {*} fail              (选填)接口调用失败的回调函数    
+     * @param {*} complete          (选填)接口调用结束的回调函数（调用成功、失败都会执行）
+     * @see https://mp.weixin.qq.com/debug/wxadoc/dev/api/media-picture.html#wxpreviewimageobject
+     */
+    static previewImage(current, urls, success, fail, complete) { }
+
+    /**
+     * 获取图片信息
+     * @param {String} src          (必填)图片的路径，可以是相对路径，临时文件路径，存储文件路径，网络图片路径
+     * @param {*} success           (选填)接口调用成功的回调函数                
+     * @param {*} fail              (选填)接口调用失败的回调函数    
+     * @param {*} complete          (选填)接口调用结束的回调函数（调用成功、失败都会执行）
+     * @see https://mp.weixin.qq.com/debug/wxadoc/dev/api/media-picture.html#wxgetimageinfoobject
+     */
+    static getImageInfo(src, success, fail, complete) { }
+
+    /**
+     * 保存图片到系统相册。需要用户授权 scope.writePhotosAlbum
+     * 基础库 1.2.0 开始支持
+     * @param {String} filePath     (必填)图片文件路径，可以是临时文件路径也可以是永久文件路径，不支持网络图片路径
+     * @param {*} success           (选填)接口调用成功的回调函数                
+     * @param {*} fail              (选填)接口调用失败的回调函数    
+     * @param {*} complete          (选填)接口调用结束的回调函数（调用成功、失败都会执行）
+     * @see https://mp.weixin.qq.com/debug/wxadoc/dev/api/media-picture.html#wxsaveimagetophotosalbumobject
+     */
+    static saveImageToPhotosAlbum(filePath, success, fail, complete) { }
+
+    
 }
