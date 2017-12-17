@@ -172,5 +172,28 @@ class wx {
      */
     static saveImageToPhotosAlbum(filePath, success, fail, complete) { }
 
-    
+    /**
+     * 开始录音。当主动调用wx.stopRecord，或者录音超过1分钟时自动结束录音，返回录音文件的临时文件路径。当用户离开小程序时，此接口无法调用
+     * 需要用户授权 scope.record
+     * 注意：1.6.0 版本开始，本接口不再维护。建议使用能力更强的 wx.getRecorderManager 接口
+     * @param {Function} success    (选填)录音成功后调用，返回录音文件的临时文件路径，res = {tempFilePath: '录音文件的临时路径'} 
+     * @param {*} fail              (选填)接口调用失败的回调函数
+     * @param {*} complete          (选填)接口调用结束的回调函数（调用成功、失败都会执行）
+     * @see https://mp.weixin.qq.com/debug/wxadoc/dev/api/media-record.html#wxstartrecordobject
+     * @deprecated
+     */
+    static startRecord(success, fail, complete) { }
+
+    /**
+     * ​主动调用停止录音
+     * @see https://mp.weixin.qq.com/debug/wxadoc/dev/api/media-record.html#wxstoprecord
+     */
+    static stopRecord() { }
+
+    /**
+     * 获取全局唯一的录音管理器 recorderManager
+     * @see https://mp.weixin.qq.com/debug/wxadoc/dev/api/getRecorderManager.html
+     * @since 1.6.0
+     */
+    static getRecorderManager() { }
 }
