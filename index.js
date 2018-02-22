@@ -196,4 +196,9 @@ class wx {
      * @since 1.6.0
      */
     static getRecorderManager() { }
+
+    /**
+     * 
+     */
+    static 
 }

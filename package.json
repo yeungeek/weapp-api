@@ -1,6 +1,6 @@
 {
     "name": "weapp-api",
-    "version": "1.6.9",
+    "version": "1.9.0",
     "description": "wechat api",
     "main": "index.js",
     "repository": {

@@ -5,6 +5,29 @@
 # 安装
 ```$ npm install weapp-api ```
 # 更新日志
+## 2018.01.16 基础库更新（1.9.0）
+* `A` 新增 API tabBar 相关接口 
+* `A` 新增 API wx.canvasGetImageData 可返回 `<canvas />` 的像素数据 
+* `A` 新增 API wx.canvasPutImageData 可将像素数据绘制到 `<canvas />`
+* `U` 更新 组件 `<swiper />` 增加 current-item-id、previous-margin、next-margin、display-multiple-items、skip-hidden-item-layout、bindanimationfinish 属性 
+* `U` 更新 组件 `<input />` 支持 selection 选区 
+* `U` 更新 组件 `<textarea />` 支持 selection 选区 
+* `U` 更新 组件 `<live-player />` 增加 bindnetstatus 事件 
+* `U` 更新 组件 `<live-pusher />` 增加 bindnetstatus 事件 
+* `U` 更新 组件 `<video />` 可对控制栏进行更细粒度控制 
+* `U` 更新 组件 `<slider /> `支持 block-size 设置滑块尺寸和 block-color 设置滑块颜色 
+* `U` 更新 API 背景音频接口 backgroundAudioManager 支持直播流音频
+* `U` 更新 API `canvasContext.drawImage` 支持从源图像裁剪后再画到 `<canvas />`
+* `U` 更新 API `wx.showToast` 文本统一限制为 7 个汉字长度，并增加无 icon 类型 
+* `F` 修复 API `wx.chooseVideo` 接口的 compressed 参数不生效的问题
+* `F` 修复 API WebSocket 接口在 Android 下服务连接失败的时候，没有立刻触发 error 和 close 事件，而是等到超时
+* `F` 修复 API Android 背景音频接口 backgroundAudioManager 不能播放本地文件的问题 
+* `F` 修复 API `wx.setEnableDebug` 接口在 Android 下会导致小程序一直在重启的问题
+* `F` 修复 API `wx.showToast `在 iOS 下连续调用两次再调用 wx.hideToast 时遮罩层没去掉的问题
+* `F` 修复 API `wx.startPullDownRefresh` 在 iOS 下没有触发 onPullDownRefresh 事件的问题
+* `F` 修复 API `wx.previewImage` 在 Android 下长按GIF发送后退出小程序的问题
+* `F` 修复 API `wx.pageScrollTo` 导致 fixed 元素闪动的问题，并增加 duration 参数 
+* `F` 修复 自定义组件通过动态设置的回调方法时会执行两遍的问题 
 ## 2017.12.07 基础库更新（1.7.0）
 * `A` 新增 组件 `<camera />` 开发工具上的调试支持 
 * `U` 更新 API `WebSocket` 支持创建多条 WebSocket 连接 
